@@ -1,27 +1,27 @@
 package 多线程.多线程并发安全;
 
-/**
- * 多线程并发安全问题
- * <p>
- * synchronized 关键字
- * 线程安全锁
- * synchronized可以修饰方法也可以单独作为语句块存在
- * synchronized的作用是限制多线程并发时同时访问该作用域
- */
-public class ThreadDemo {
-    public static void main(String[] args) {
-        Bank bank = new Bank();
-        Bank.Preson p1 = bank.new Preson();
-        Bank.Preson p2 = bank.new Preson();
+public class wait_notify {
+    public static void main(String[] args) throws InterruptedException {
+        Bank1 bank = new Bank1();
+        Bank1.Preson p1 = bank.new Preson();
+        Bank1.Preson p2 = bank.new Preson();
         p1.start();
         p2.start();
+        /**
+         * p1和p2都在bank对象上等待了，进入了阻塞
+         */
+        Thread.sleep(5000);
+        bank.count = 10000;
+        synchronized(bank){
+            bank.notifyAll();//通知当前对象等待的线程开始运行
+        }
+
     }
 
 }
 
-class Bank {
-    int count = 10000;
-
+class Bank1 {
+    int count;
     /**
      * synchronized修饰方法后，方法就不是异步的了，而是同步的了
      * synchronized会为方法上锁
@@ -50,6 +50,14 @@ class Bank {
 
     class Preson extends Thread {
         public void run() {
+            try {
+                synchronized (Bank1.this){
+                    Bank1.this.wait();//当前线程(Preson)在银行对象上等待
+                }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             while (true) {
                 getMoney(100);
                 System.out.println("当前余额:" + count);
