@@ -13,6 +13,7 @@ import java.util.concurrent.Executors;
 public class Client {
     private Socket socket;
     private ExecutorService executorService;
+
     /**
      * 客户端构造方法，用于初始化客户端
      */
@@ -58,13 +59,27 @@ public class Client {
              * 按行为单位写出字符串
              */
             pw = new PrintWriter(osw, true);
+            //输出欢迎语
+            System.out.println("欢迎来到张连宇的聊天室");
             Scanner scanner = new Scanner(System.in);
+            while (true) {
+                /**
+                 * 首先输入昵称
+                 */
+                System.out.println("请输入昵称:");
+                String nickName = scanner.nextLine();
+                if (nickName.trim().length() > 0) {
+                    pw.println(nickName);
+                    break;
+                }
+                System.out.println("昵称不能是空");
+            }
             while (true) {
                 pw.println(scanner.nextLine());
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 this.socket.close();
             } catch (IOException e) {
@@ -79,8 +94,9 @@ public class Client {
      * 到控制台
      */
     class GetServerInfoHandlet implements Runnable {
-        public GetServerInfoHandlet(){
+        public GetServerInfoHandlet() {
         }
+
         @Override
         public void run() {
             try {
@@ -89,17 +105,17 @@ public class Client {
                  */
                 InputStream in = socket.getInputStream();
                 //将输入流转换为字符输入流，指定编码
-                InputStreamReader isr = new InputStreamReader(in,"utf-8");
+                InputStreamReader isr = new InputStreamReader(in, "utf-8");
                 //将字符输入流转换为缓冲流
                 BufferedReader br = new BufferedReader(isr);
                 String message;
-                while ((message = br.readLine())!=null){
-                    System.out.println("服务端说:"+message);
+                while ((message = br.readLine()) != null) {
+                    System.out.println("服务端说:" + message);
                 }
 
             } catch (Exception e) {
 
-            }finally {
+            } finally {
                 System.out.println("服务端连接关闭了");
             }
         }

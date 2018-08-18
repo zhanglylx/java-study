@@ -1,10 +1,10 @@
 package Socket;
+
 import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -17,7 +17,8 @@ public class Server {
     //线程池，用于管理客户端连接的交互线程
     private ExecutorService threadPool;
     //保存所有客户端输出流的集合
-    private List<PrintWriter> allOut;
+    private Map<String, PrintWriter> allOut;
+
     /**
      * 构造方法，用于初始化服务端
      */
@@ -34,7 +35,7 @@ public class Server {
              */
             this.threadPool = Executors.newFixedThreadPool(50);
             //初始化存放所有客户端输出流的集合
-            this.allOut = new ArrayList<>();
+            this.allOut = new HashMap<>();
 
             System.out.println("服务端初始化完毕");
         } catch (IOException e) {
@@ -77,6 +78,10 @@ public class Server {
     class ClientHandler implements Runnable {
         //当前线程处理的客户端的socket
         private Socket socket;
+        //当前客户端的ip
+        private String ip;
+        //当前客户端的昵称
+        private String nickName;
 
         /**
          * 根据给定的客户端的Socket，创建
@@ -91,9 +96,13 @@ public class Server {
             InetAddress address = socket.getInetAddress();
             //获取远端计算机的IP地址
             address.getHostAddress();
+            this.ip = address.getHostAddress();
             //获取客户端的端口后
             int port = socket.getPort();
             System.out.println("客户端连接了:" + address.getHostAddress() + ":" + port);
+            //改为使用昵称，不在这里进行通知
+//            //通知其他用户，该用户上线了
+//            sendMessage("["+ip+"]上线了");
         }
 
         /**
@@ -112,23 +121,41 @@ public class Server {
                 OutputStream outputStream = socket.getOutputStream();
                 //转换为字符流，用于指定编码集
                 OutputStreamWriter outputStreamWriter =
-                                            new OutputStreamWriter(outputStream,"utf-8");
+                        new OutputStreamWriter(outputStream, "utf-8");
                 //创建缓冲字符输出流
-                printWriter = new PrintWriter(outputStreamWriter,true);
+                printWriter = new PrintWriter(outputStreamWriter, true);
                 /*
                     将该客户端的输出流存入共享集合
                     以便使得该客户端也能接收服务端
                     转发的消息
                  */
-                allOut.add(printWriter);
+//                allOut.add(printWriter);  线程不安全
+
                 InputStream inputStream = socket.getInputStream();
                 InputStreamReader inputStreamReader =
                         new InputStreamReader(inputStream, "utf-8");
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                /**
+                 * 当创建好当前客户端的输入流后
+                 * 读取的第一个字符串应当是昵称
+                 */
+                this.nickName = bufferedReader.readLine();
+                addOut(this.nickName, printWriter);
+                sendMessage(this.nickName,"当前用户上线了");
+                //输出当前在线人数
+                System.out.println("当前在线人数为:" + allOut.size());
                 String message;
                 while ((message = bufferedReader.readLine()) != null) {
-                    System.out.println("客户端说:" + message);
-                    printWriter.println(message);
+//                    System.out.println("客户端说:" + message);
+//                    printWriter.println(message);
+                    /**
+                     * 当读取到客户端发送过来一条消息后，
+                     * 将消息转发所给所有客户端
+                     */
+//                    for (PrintWriter o : allOut) {    线程不安全
+//                        o.println(message);
+//                    }
+                    sendMessage(this.nickName,"说:"+message);
                 }
             } catch (IOException e) {
                 //在windows中的客户端，
@@ -138,8 +165,10 @@ public class Server {
                 /**
                  * 首选将该客户端的输出流从共享集合中删除
                  */
-                allOut.remove(printWriter);
-
+//                allOut.remove(printWriter);线程不安全
+                removerOut(printWriter);
+                //输出当前在线人数
+                System.out.println("当前在线人数为:" + allOut.size());
 
                 /**
                  * 无论是linux用户还是windows用户，当与服务端断开连接后，
@@ -151,9 +180,57 @@ public class Server {
                     e.printStackTrace();
                 }
                 System.out.println("一个客户端下线了...");
+                //通知其他用户，该用户下线了
+                sendMessage(this.nickName,"下线了");
             }
         }
     }
+
+    /**
+     * 将给定的输出流存入共享集合
+     *
+     * @param pw
+     */
+    public synchronized void addOut(String nickName, PrintWriter pw) {
+        allOut.put(nickName, pw);
+    }
+
+    /**
+     * 将给定的输出流从共享集合中删除
+     *
+     * @param pw
+     */
+    public synchronized void removerOut(PrintWriter pw) {
+        allOut.remove(pw);
+    }
+
+    /**
+     * 将给定的消息转发给所有客户端
+     *
+     * @param message
+     */
+    public synchronized void sendMessage(String nickName,String message) {
+        if (message.indexOf("@") != -1) {
+            this.sendMessage(nickName,message.substring(
+                    message.indexOf("@")+1,
+                    message.indexOf(":", message.indexOf("@")))
+                    , message);
+            return;
+        }
+        message = "["+nickName+"]"+message;
+        Iterator<Map.Entry<String, PrintWriter>> iterator = this.allOut.entrySet().iterator();
+        while (iterator.hasNext()) {
+            iterator.next().getValue().println(message);
+        }
+    }
+
+    public synchronized void sendMessage(String senderName,String nickName, String message) {
+        for(Map.Entry<String,PrintWriter> entry : this.allOut.entrySet()){
+            if(entry.getKey().equals(nickName) ||
+                    entry.getKey().equals(senderName)   )entry.getValue().println("["+senderName+"]悄悄告诉你:"+message);
+        }
+    }
+
 
     public static void main(String[] args) {
         Server server = null;
