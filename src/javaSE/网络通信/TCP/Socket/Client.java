@@ -1,4 +1,4 @@
-package Socket;
+package 网络通信.TCP.Socket;
 
 import java.io.*;
 import java.net.Socket;
@@ -81,7 +81,7 @@ public class Client {
             e.printStackTrace();
         } finally {
             try {
-                this.socket.close();
+                if(this.socket!=null)this.socket.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
