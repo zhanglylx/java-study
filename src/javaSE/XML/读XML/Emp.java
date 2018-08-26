@@ -1,4 +1,4 @@
-package XML;
+package XML.读XML;
 
 /**
  * 该类用于描述emp.xml文件中表示的员工
@@ -17,6 +17,8 @@ public class Emp {
         this.gender = gender;
         this.salary = salary;
     }
+
+    public Emp(){}
 
     public int getId() {
         return id;
@@ -56,5 +58,16 @@ public class Emp {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Emp{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }
