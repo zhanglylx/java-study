@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e9643a4-68bf-47df-97da-7d89659c13b6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/javaSE/XML/写XML/XMLDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javaSE/XML/读XML/XMLDemo1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javaSE/XML/读XML/emp.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javaSE/XML/Emp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaSE/XML/读XML/Emp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javaSE/XML/XMLDemo1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaSE/XML/写XML/XMLDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaSE/XML/写XML/XMLDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaSE/XML/读XML/Emp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaSE/XML/读XML/Emp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaSE/XML/读XML/attribute_getName和getValue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaSE/XML/读XML/attribute方法.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaSE/XML/读XML/getName.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,50 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestThread.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/TestThread.java">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javaSE/网络通信/TCP/Socket/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ThreadSleep.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/ThreadSleep.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestThreadOtherMethod.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/TestThreadOtherMethod.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="42" column="42" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ThreadDemo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/多线程并发安全/ThreadDemo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XMLDemo1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/javaSE/XML/读XML/XMLDemo1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="365">
+              <caret line="190" column="6" selection-start-line="190" selection-start-column="6" selection-end-line="190" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -85,8 +46,8 @@
       <file leaf-file-name="XMLDemo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javaSE/XML/写XML/XMLDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+            <state relative-caret-position="245">
+              <caret line="95" column="28" lean-forward="true" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,38 +55,85 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="XMLWriter.class" pinned="false" current-in-tab="false">
+        <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/io/XMLWriter.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="148" column="63" selection-start-line="148" selection-start-column="57" selection-end-line="148" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OutputFormat.class" pinned="false" current-in-tab="false">
+        <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/io/OutputFormat.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+              <folding>
+                <element signature="e#1572#1573#0" expanded="true" />
+                <element signature="e#1608#1609#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Element.class" pinned="false" current-in-tab="false">
+        <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/Element.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Branch.class" pinned="false" current-in-tab="false">
+        <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/Branch.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Node.class" pinned="false" current-in-tab="false">
+        <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/Node.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cloneable.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/Developer/jdk1.8.0_171/src.zip!/java/lang/Cloneable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="52" column="26" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Emp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javaSE/XML/读XML/Emp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="313">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="e#553#554#0" expanded="true" />
+                <element signature="e#580#581#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emp.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/javaSE/XML/读XML/emp.xml">
+      <file leaf-file-name="XMLDemo1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javaSE/XML/读XML/XMLDemo1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="15" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
-        <entry file="jar://E:/JAVA/java/src.zip!/java/util/Map.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6327">
-              <caret line="359" column="25" selection-start-line="359" selection-start-column="25" selection-end-line="359" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Thread.java" pinned="false" current-in-tab="false">
-        <entry file="jar://E:/JAVA/java/src.zip!/java/lang/Thread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13148">
-              <caret line="747" selection-start-line="747" selection-end-line="747" />
+            <state relative-caret-position="153">
+              <caret line="59" column="15" lean-forward="true" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,6 +183,7 @@
         <option value="$PROJECT_DIR$/src/javaSE/XML/Emp.java" />
         <option value="$PROJECT_DIR$/src/javaSE/XML/XMLDemo1.java" />
         <option value="$PROJECT_DIR$/src/javaSE/XML/读XML/XMLDemo1.java" />
+        <option value="$PROJECT_DIR$/src/javaSE/XML/读XML/Emp.java" />
         <option value="$PROJECT_DIR$/src/javaSE/XML/写XML/XMLDemo.java" />
       </list>
     </option>
@@ -204,10 +213,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="427" />
-    <option name="y" value="12" />
-    <option name="width" value="2103" />
-    <option name="height" value="1410" />
+    <option name="x" value="-8" />
+    <option name="width" value="694" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -215,8 +223,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,13 +256,28 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="javaSE" type="462c0819:PsiDirectoryNode" />
               <item name="XML" type="462c0819:PsiDirectoryNode" />
+              <item name="写XML" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-study" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="javaSE" type="462c0819:PsiDirectoryNode" />
+              <item name="XML" type="462c0819:PsiDirectoryNode" />
               <item name="读XML" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-study" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="javaSE" type="462c0819:PsiDirectoryNode" />
+              <item name="网络通信" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,7 +312,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.XMLDemo1">
+  <component name="RunManager" selected="Application.XMLDemo">
     <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="网络通信.UDP.Client" />
       <module name="zhanglianyu" />
@@ -312,8 +335,8 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="网络通信.TCP.Socket.Server" />
+    <configuration name="StartMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="网络通信.TCP.Socket.StartMain" />
       <module name="zhanglianyu" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -323,13 +346,13 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="StartMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="网络通信.TCP.Socket.StartMain" />
+    <configuration name="XMLDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="XML.写XML.XMLDemo" />
       <module name="zhanglianyu" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="网络通信.TCP.Socket.*" />
+          <option name="PATTERN" value="XML.写XML.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -387,19 +410,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.Server" />
       <item itemvalue="Application.StartMain" />
       <item itemvalue="Application.Server (1)" />
       <item itemvalue="Application.Client (1)" />
       <item itemvalue="Application.XMLDemo1" />
+      <item itemvalue="Application.XMLDemo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.XMLDemo" />
         <item itemvalue="Application.XMLDemo1" />
         <item itemvalue="Application.Client (1)" />
         <item itemvalue="Application.Server (1)" />
         <item itemvalue="Application.StartMain" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -452,43 +475,68 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78391000" />
+    <option name="totallyTimeSpent" value="82471000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="807" y="10" width="1217" height="1128" extended-state="0" />
+    <frame x="-8" y="0" width="694" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.42435703" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32026145" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.42435703" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.04091653" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4784353" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.03986711" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30232558" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14926662" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08832808" />
       <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4784353" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14926662" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.42435703" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.04091653" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32026145" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Designer" order="2" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,51 +578,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="更新" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/多线程并发安全/ThreadDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1107">
-          <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/ThreadSleep.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/TestInterruptedException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/MySecThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/TestInnerClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/MySecRunnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/MyFirstRunnable.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -586,25 +589,29 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/MyFirstRunnable.java">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/MyFirstThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
+        <state relative-caret-position="270">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/MySecRunnable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="54">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/MySecThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="54">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
@@ -653,8 +660,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/后台线程/DaemonThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="28" />
+        <state relative-caret-position="1026">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -684,39 +691,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/JAVA/java/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13148">
-          <caret line="747" selection-start-line="747" selection-end-line="747" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/JAVA/java/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6327">
-          <caret line="359" column="25" selection-start-line="359" selection-start-column="25" selection-end-line="359" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://E:/JAVA/java/src.zip!/java/lang/Thread.java" />
+    <entry file="jar://E:/JAVA/java/src.zip!/java/util/Map.java" />
     <entry file="jar://D:/Developer/jdk1.8.0_171/src.zip!/java/net/DatagramPacket.java" />
     <entry file="jar://D:/Developer/jdk1.8.0_171/src.zip!/java/net/DatagramSocket.java" />
-    <entry file="file://$PROJECT_DIR$/src/javaSE/网络通信/TCP/Socket/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javaSE/网络通信/TCP/Socket/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        <state relative-caret-position="864">
+          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaSE/网络通信/TCP/Socket/StartMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="135">
           <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
         </state>
       </provider>
@@ -746,9 +734,6 @@
       </provider>
     </entry>
     <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/io/SAXReader.class" />
-    <entry file="jar://D:/Developer/jdk1.8.0_171/src.zip!/java/lang/Cloneable.java" />
-    <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/Node.class" />
-    <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/Branch.class" />
     <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/Document.class" />
     <entry file="file://$PROJECT_DIR$/src/javaSE/多线程/多线程并发安全/ThreadDemo.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -764,27 +749,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaSE/XML/读XML/Emp.java">
+    <entry file="file://$PROJECT_DIR$/src/javaSE/网络通信/TCP/Socket/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="365">
+          <caret line="190" column="6" selection-start-line="190" selection-start-column="6" selection-end-line="190" selection-end-column="6" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaSE/XML/读XML/attribute_getName和getValue.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaSE/XML/读XML/getName.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/javaSE/XML/读XML/XMLDemo1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+        <state relative-caret-position="153">
+          <caret line="59" column="15" lean-forward="true" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaSE/XML/读XML/attribute方法.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://D:/Developer/jdk1.8.0_171/src.zip!/java/lang/Cloneable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/Node.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/Branch.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/Element.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/io/OutputFormat.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+          <folding>
+            <element signature="e#1572#1573#0" expanded="true" />
+            <element signature="e#1608#1609#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/maven/java-study/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/io/XMLWriter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="148" column="63" selection-start-line="148" selection-start-column="57" selection-end-line="148" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaSE/XML/读XML/Emp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/javaSE/XML/写XML/XMLDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        <state relative-caret-position="245">
+          <caret line="95" column="28" lean-forward="true" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

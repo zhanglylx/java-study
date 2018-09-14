@@ -13,6 +13,7 @@ public class Emp {
     public Emp(int id, String name, int age, String gender, int salary) {
         super();
         this.id = id;
+        this.name = name;
         this.age = age;
         this.gender = gender;
         this.salary = salary;
