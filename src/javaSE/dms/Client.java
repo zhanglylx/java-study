@@ -292,6 +292,9 @@ public class Client {
                     putLogToMap(logData, loginMap);
                 } else if (logData.getType() == LogData.TYPE_LOGOUT) {
                     putLogToMap(logData, logoutMap);
+                }else if(logData.getType() == LogData.LOG_TEST){
+                    putLogToMap(logData, loginMap);
+                    putLogToMap(logData, logoutMap);
                 }
             }
 
@@ -394,7 +397,7 @@ public class Client {
         BufferedReader bufferedReader = null;
         PrintWriter printWriter = null;
         try {
-            socket = new Socket("", 8888);
+            socket = new Socket("localhost", 15000);
             OutputStream outputStream = socket.getOutputStream();
             OutputStreamWriter outputStreamWriter =
                     new OutputStreamWriter(outputStream, "utf-8");
@@ -410,6 +413,8 @@ public class Client {
             while ((line = bufferedReader.readLine()) != null) {
                 printWriter.println(line);
             }
+            //最后发送一个over,表示发送完毕了
+            printWriter.println("over");
             printWriter.flush();
             //已经将logrec.txt文件中的内容发送了
             //发送完，将读取文件的流关掉

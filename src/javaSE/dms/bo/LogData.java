@@ -9,6 +9,8 @@ import net.sf.json.JsonConfig;
  * 日志信息
  */
 public class LogData {
+    //测试用
+    public static final int LOG_TEST =0;
     /**
      * 日志在wtmpx文件中的长度
      * 每一条日志的长度都是372字节
