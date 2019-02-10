@@ -34,7 +34,6 @@
             <classifier>jdk15</classifier>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/jaxen/jaxen -->
         <dependency>
             <groupId>jaxen</groupId>
