@@ -49842,7 +49842,7 @@
     </table>
     <table id="7153" parent="34" name="MVIEW$_ADV_FJG">
       <ObjectId>6376</ObjectId>
-      <Comment>Representation for query join sub-graph not in AJG </Comment>
+      <Comment>Representation for query join sub-graph not in AJG</Comment>
       <CreatedTimestamp>2018-03-31.05:41:27</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.05:41:27</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
@@ -50047,7 +50047,7 @@
       <ObjectId>6401</ObjectId>
       <Comment>This view gives DBA access to summary evaluation output</Comment>
       <SourceTextLength>397</SourceTextLength>
-      <DependsOnIds>5139,6384,6367</DependsOnIds>
+      <DependsOnIds>5139,6367,6384</DependsOnIds>
       <CreatedTimestamp>2018-03-31.05:41:27</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.05:41:27</ModifiedTimestamp>
       <Modifiable>1</Modifiable>
@@ -50056,7 +50056,7 @@
       <ObjectId>6402</ObjectId>
       <Comment>This view gives DBA access to dimension validation results</Comment>
       <SourceTextLength>269</SourceTextLength>
-      <DependsOnIds>6386,5139,6367</DependsOnIds>
+      <DependsOnIds>5139,6367,6386</DependsOnIds>
       <CreatedTimestamp>2018-03-31.05:41:27</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.05:41:27</ModifiedTimestamp>
       <Modifiable>1</Modifiable>
@@ -50083,7 +50083,7 @@
       <ObjectId>6398</ObjectId>
       <Comment>Advisor session log</Comment>
       <SourceTextLength>596</SourceTextLength>
-      <DependsOnIds>6367,5139</DependsOnIds>
+      <DependsOnIds>5139,6367</DependsOnIds>
       <CreatedTimestamp>2018-03-31.05:41:27</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.05:41:27</ModifiedTimestamp>
       <Modifiable>1</Modifiable>
@@ -50092,7 +50092,7 @@
       <ObjectId>6400</ObjectId>
       <Comment>This view gives DBA access to summary recommendations</Comment>
       <SourceTextLength>520</SourceTextLength>
-      <DependsOnIds>6367,5139,6384</DependsOnIds>
+      <DependsOnIds>5139,6367,6384</DependsOnIds>
       <CreatedTimestamp>2018-03-31.05:41:27</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.05:41:27</ModifiedTimestamp>
       <Modifiable>1</Modifiable>
@@ -50117,7 +50117,7 @@
     <view id="7192" parent="34" name="SCHEDULER_JOB_ARGS">
       <ObjectId>13329</ObjectId>
       <SourceTextLength>148</SourceTextLength>
-      <DependsOnIds>13202,7300,13111</DependsOnIds>
+      <DependsOnIds>7300,13111,13202</DependsOnIds>
       <CreatedTimestamp>2018-03-31.05:48:52</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.05:48:52</ModifiedTimestamp>
       <Modifiable>1</Modifiable>
@@ -50125,7 +50125,7 @@
     <view id="7193" parent="34" name="SCHEDULER_PROGRAM_ARGS">
       <ObjectId>13328</ObjectId>
       <SourceTextLength>193</SourceTextLength>
-      <DependsOnIds>13111,13194,7300</DependsOnIds>
+      <DependsOnIds>7300,13111,13194</DependsOnIds>
       <CreatedTimestamp>2018-03-31.05:48:52</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.05:48:52</ModifiedTimestamp>
       <Modifiable>1</Modifiable>
@@ -50250,7 +50250,7 @@
       <ObjectId>18846</ObjectId>
       <RoutineKind>function</RoutineKind>
       <Obfuscated>1</Obfuscated>
-      <DependsOnIds>9611,7092,7091,15577</DependsOnIds>
+      <DependsOnIds>7091,7092,9611,15577</DependsOnIds>
       <CreatedTimestamp>2018-03-31.06:00:10</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.06:00:10</ModifiedTimestamp>
     </routine>
@@ -50258,7 +50258,7 @@
       <ObjectId>18849</ObjectId>
       <RoutineKind>function</RoutineKind>
       <Obfuscated>1</Obfuscated>
-      <DependsOnIds>7091,9614,15577,7092</DependsOnIds>
+      <DependsOnIds>7091,7092,9614,15577</DependsOnIds>
       <CreatedTimestamp>2018-03-31.06:00:10</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.06:00:10</ModifiedTimestamp>
     </routine>
@@ -50266,7 +50266,7 @@
       <ObjectId>18848</ObjectId>
       <RoutineKind>function</RoutineKind>
       <Obfuscated>1</Obfuscated>
-      <DependsOnIds>15577,9613,7091,7092</DependsOnIds>
+      <DependsOnIds>7091,7092,9613,15577</DependsOnIds>
       <CreatedTimestamp>2018-03-31.06:00:10</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.06:00:10</ModifiedTimestamp>
     </routine>
@@ -50274,7 +50274,7 @@
       <ObjectId>18847</ObjectId>
       <RoutineKind>function</RoutineKind>
       <Obfuscated>1</Obfuscated>
-      <DependsOnIds>7092,7091,9612,15577</DependsOnIds>
+      <DependsOnIds>7091,7092,9612,15577</DependsOnIds>
       <CreatedTimestamp>2018-03-31.06:00:10</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.06:00:10</ModifiedTimestamp>
     </routine>
@@ -50282,7 +50282,7 @@
       <ObjectId>18845</ObjectId>
       <RoutineKind>function</RoutineKind>
       <Obfuscated>1</Obfuscated>
-      <DependsOnIds>15577,9610,7092,7091</DependsOnIds>
+      <DependsOnIds>7091,7092,9610,15577</DependsOnIds>
       <CreatedTimestamp>2018-03-31.06:00:09</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.06:00:09</ModifiedTimestamp>
     </routine>
@@ -50290,7 +50290,7 @@
       <ObjectId>18850</ObjectId>
       <RoutineKind>function</RoutineKind>
       <Obfuscated>1</Obfuscated>
-      <DependsOnIds>7091,9615,7092,15577</DependsOnIds>
+      <DependsOnIds>7091,7092,9615,15577</DependsOnIds>
       <CreatedTimestamp>2018-03-31.06:00:10</CreatedTimestamp>
       <ModifiedTimestamp>2018-03-31.06:00:10</ModifiedTimestamp>
     </routine>
