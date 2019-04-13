@@ -76,6 +76,8 @@ public class DBUtils {
         try {
             Connection connection = tl.get();
             if (connection != null) {
+                //恢复连接为自动提交事务
+                connection.setAutoCommit(true);
                 /**
                  * 通过连接池获取的Connection
                  * 的close()方法实际上并没有将

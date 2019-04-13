@@ -1,4 +1,4 @@
-package day02;
+import day02.DBUtils;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -18,7 +18,7 @@ public class UserService {
          */
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入您要做的操作:1为注册，2为登录");
-        int number=Integer.parseInt(scanner.nextLine());
+        int number = Integer.parseInt(scanner.nextLine());
         switch (number) {
             case 1:
                 regUser(scanner);
@@ -158,11 +158,27 @@ public class UserService {
                     connection.prepareStatement(sql);
             preparedStatement.setString(1,user);
             preparedStatement.setString(2,pwd);
+            System.out.println(preparedStatement.toString());
             if (preparedStatement.executeQuery().next()) {
                 System.out.println("登录成功");
             } else {
                 System.out.println("用户名或密码错误");
             }
+//            String sql =
+//                    "SELECT * " +
+//                            "FROM user_zhanglianyu " +
+//                            "WHERE name='" + user + "'" +
+//                            "AND password='" + pwd + "'";
+//            System.out.println(sql);
+//            Statement statement = connection.createStatement();
+//            ResultSet resultSet = statement.executeQuery(sql);
+//            if (resultSet.next()){
+//                System.out.println("登录成功");
+//            }else{
+//                System.out.println("登录失败" +
+//                        "");
+//            }
+
 
         } catch (Exception e) {
             e.printStackTrace();

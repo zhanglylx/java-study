@@ -1,12 +1,15 @@
-package day02;
+package day03;
+
+import day02.DBUtils;
 
 import java.sql.*;
 import java.util.Scanner;
 
 /**
  * 与用户相关的业务逻辑
+ * 事务转账操作
  */
-public class UserService {
+public class UserService事务 {
     public static void main(String[] args) {
         /*
          *程序启动后:
@@ -15,19 +18,9 @@ public class UserService {
          * 2:更改用户信息
          * 3:删除用户信息
          * 4:查询用户信息
+         * 5:转账
          */
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("请输入您要做的操作:1为注册，2为登录");
-        int number=Integer.parseInt(scanner.nextLine());
-        switch (number) {
-            case 1:
-                regUser(scanner);
-                break;
-            case 2:
-                login(scanner);
-                break;
-        }
-//        regUser("张连宇", "123456", "1000", "zhanglianyu@qq.com");
+        regUser("张连宇", "123456", "1000", "zhanglianyu@qq.com");
     }
 
 
@@ -75,7 +68,7 @@ public class UserService {
     }
 
     /**
-     * danei的写法
+     * 老师的写法
      */
     public static void regUser(Scanner scanner) {
         /**
@@ -92,7 +85,7 @@ public class UserService {
             System.out.println("请输入用户名:");
             String user = scanner.nextLine().trim();
             System.out.println("请输入密码:");
-            String pwd = scanner.nextLine().trim();
+            String pwd = scanner.nextLine();
             System.out.println("请输入账户金额:");
             String money = scanner.nextLine();
             System.out.println("请输入邮箱地址:");
@@ -119,11 +112,7 @@ public class UserService {
                     ",'" + money + "'" +
                     ",'" + email + "'" +
                     ")";
-            if (statement.executeUpdate(sql) != 1) {
-                System.out.println("注册失败");
-            } else {
-                System.out.println("注册成功");
-            }
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -156,8 +145,7 @@ public class UserService {
                             "WHERE name=? AND password=?";
             PreparedStatement preparedStatement =
                     connection.prepareStatement(sql);
-            preparedStatement.setString(1,user);
-            preparedStatement.setString(2,pwd);
+
             if (preparedStatement.executeQuery().next()) {
                 System.out.println("登录成功");
             } else {
@@ -172,6 +160,86 @@ public class UserService {
     }
 
     public static void updateUser() {
+
+    }
+
+
+    /**
+     * 转账操作
+     *
+     * @param scanner
+     */
+    public static void giveMoney(Scanner scanner) {
+        /**
+         * 1:获取用户输入的信息
+         * 2:必要的验证，看看转出的账户余额是否够
+         * ---事务开始的地址
+         * 3:更新转出账户的余额
+         * 4:更新转入账户的余额
+         * ---提交事务的地方的、
+         */
+        //1
+        System.out.println("现在是转账操作");
+        System.out.println("请输入您的账户");
+        String fromUser = scanner.nextLine().trim();
+        System.out.println("请输入接收人账户");
+        String toUser = scanner.nextLine().trim();
+        System.out.println("请输入转出金额");
+        String money = scanner.nextLine().trim();
+        //2
+        String countSql =
+                "SELECT money FROM user_zhanglianyu" +
+                        "WHERE name=?";
+        try {
+            Connection connection = DBUtils.getConnection();
+            //关闭自动提交事务
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement(countSql);
+            preparedStatement.setString(1, fromUser);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            //判断是否查询出数据
+            if (resultSet.next()) {
+
+                int count = resultSet.getInt(1);
+                if (count >= Integer.parseInt(money)) {
+                    //执行转账操作
+                    String fromSql
+                            = "UPDATE user_zhanglianyu " +
+                            "SET money=money-" + money + " " +
+                            "WHERE name='" + fromUser + "'";
+                    //修改当前用户的余额
+                    if (preparedStatement.executeUpdate(fromSql) > 0) {
+                        //修改收款人的余额
+                        String toSql
+                                = "UPDATE user_zhanglianyu " +
+                                "SET money=money+" + money + " " +
+                                "WHERE name='" + toUser + "'";
+                        if(preparedStatement.executeUpdate(toSql)>0){
+                            System.out.println("转账成功");
+                            /**
+                             * 两次更新账户均成功，我们才
+                             * 认为这次转账操作完毕。提交事务
+                             */
+                            connection.commit();
+                        }else {
+                            System.out.println("转账失败:没有收款人:"+toUser);
+                            /**
+                             * 如果第二次更新操作失败，那么整次
+                             * 操作就算失败.应该回滚事务
+                             */
+                            connection.rollback();
+                        }
+                    }
+                } else {
+                    System.out.println("账户余额不足:" + fromUser);
+                }
+            } else {
+                System.out.println("没有该账户:" + fromUser);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 }
