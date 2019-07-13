@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function jiecheng() {
+            var number = document.getElementById("num").value;
+            var span = document.getElementById("result");
+            if(!isNaN(number) && number){
+                if(number<0){
+                    span.innerHTML="负数没有阶乘";
+                }
+                // if(number == 0){
+                //     span.innerHTML="1";
+                //     return;
+                // }
+                var nn=1;
+                //使用i可以做条件，当i递减到0时，就相当于false,则循环终止
+                for (var i = number; i; i--) {
+                    if(i==0)break;
+                    nn = nn*i;
+                }
+                span.innerHTML=nn;
+            }else{
+                span.innerHTML="请输入数字";
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="num"/>
+        <input type="button" value="计算" onclick="jiecheng()"/>
+        =&nbsp;<span id="result"></span>
+        <p>n(正整数)的阶乘=1*2*3*...*n</p>
+    </div>
+</body>
+</html>

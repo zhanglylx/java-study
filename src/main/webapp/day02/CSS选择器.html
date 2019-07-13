@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*类选择器：选择class等于某值得所有元素.class是程序员根据逻辑
+        自己给元素增加的分类。*/
+        .girl{
+            color:pink;
+        }
+        /*i选择器：选择id等于某值得唯一的元素*/
+        #p4{
+            color: yellow;
+        }
+        /*选择器组:写出一组选择器，选中每个选择器所对应的目标的并集*/
+        .girl,#p4{
+            font-weight: bold;
+        }
+        /*派生选择器*/
+        /*1：选择某元素的子孙*/
+        #p5 b {
+            color: red;
+        }
+        /*2：选择某元素的儿子*/
+        #p5>b{
+            font-size: 30px;
+        }
+        /*伪类选择器：根据元素的状态选择元素。*/
+        /*1.1：选择未访问过的超链接*/
+        a:link{
+            color: green;
+        }
+        /*2：选择已访问过的超链接*/
+        a:visited{
+            color: red;
+        }
+        /*3:选择激活态（正在点）的按钮*/
+        #i1:active{
+            background-color: blue;
+        }
+        /*4选择有焦点的文本框/密码框/文本域*/
+        #i2:focus{
+            background-color: green;
+        }
+        /*5选择鼠标悬停态（触碰）的图片*/
+        img:hover{
+            width: 500px;
+            height:500px;
+        }
+    </style>
+</head>
+<body>
+    <p class="girl">苍老师呀苍老师</p>
+    <p>老师呀老师老</p>
+    <p class="girl">你们呀你们呀</p>
+    <p id="p4">破事破事破事</p>
+    <p id="p5">
+        北京市<u><b>东城区</b>东四北大街</u>168号<b>中文万维</b>
+    </p>
+
+    <p>
+        <a href="http://www,tmooc.cn">中文</a>
+        <a href="http://doc.tedu.cn">文档</a>
+        <a href="http://doc.xiabian.cn">文档</a>
+    </p>
+
+    <p>
+        <input type="button" value="按钮" id="i1"/>
+    </p>
+    <p>
+        <input type="text" id="i2"/>
+    </p>
+    <p>
+        <img src="../images/2.png"/>
+    </p>
+</body>
+</html>

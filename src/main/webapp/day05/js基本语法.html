@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1.将js封装成函数，点击某按钮时调用
+        //2.不把js封装成函数，直接在此书写js，
+    //      则这样的js在网页加载(执行)时立刻调用。
+    //      该js的执行时机甚至比body还早
+        console.log("控制台打印")
+    //    1.声明变量
+        var x;
+        console.log(x);
+        x=3;
+        console.log(x);
+        var y="hello";
+        console.log(y);
+    //    2.隐式转换
+        var s="hi";
+        var n=3.14;
+        var b=true;
+        console.log(s+n);
+        console.log(s+b);
+        console.log(n+b);
+        console.log(b+b);
+    //  3.强制转换
+        console.log(n.toString()+1);
+        console.log(parseInt(n));
+        console.log(parseInt("5.6"));
+        console.log(parseInt("abs"));
+        console.log(parseFloat("5.6"));
+        console.log(typeof(n));
+        console.log(isNaN("56"));
+        console.log(isNaN("abc"));
+        console.log(isNaN(parseInt("")));
+        console.log(parseInt(""))
+    //    4.运算符
+        console.log(5/2);
+        var m="3";
+        var n=3;
+        console.log(m==n);
+        console.log(m===n);
+    //    5.条件表达式
+    //    js中可以用任意数据做条件
+    //    当使用非布尔值做条件时，所有的
+    //    空值都等价于false,非空值等价于true。
+    //    空值:null  0 "" undefined  NaN
+    //    这么设计的目的是为了简化条件表达式
+        var k = 0;
+        if(k){
+            console.log("ok");
+        }
+        k && console.log("yes")
+    </script>
+</head>
+<body>
+    <p>js语法和java十分相似</p>
+</body>
+</html>

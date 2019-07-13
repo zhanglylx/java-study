@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            border:1px solid red;
+            width: 100px;
+            height: 100px;
+        }
+    /*  设置边距有五种方法  */
+    /*    1.四个边设置相同的边距*/
+        #d1{
+            /*padding 内间距*/
+            padding: 20px;
+            /*margin:外间距*/
+            margin:30px;
+        }
+    /*    2.四个边设置不同的边距(上右下左 顺时针)*/
+        #d2{
+            padding: 10px 20px 30px 40px;
+            margin: 40px 30px 20px 10px;
+        }
+    /*    3.单个边设置边距*/
+        #d3{
+            padding-left: 20px;
+            margin-bottom: 40px;
+        }
+    /*    4.对边设置相同的边距*/
+        #d4{
+            padding:20px 40px;
+            margin:30px 10px;
+        }
+    /*    5.对边设置边距的特例
+            在设置外边距时，若左右边距值
+            为auto，则该元素水平居中*/
+        #d5{
+            margin:20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="d0">d0</div>
+    <div id="d1">d1</div>
+    <div id="d2">d2</div>
+    <div id="d3">d3</div>
+    <div id="d4">d4</div>
+    <div id="d5">d5</div>
+</body>
+</html>

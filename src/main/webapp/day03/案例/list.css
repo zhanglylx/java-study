@@ -1,0 +1,205 @@
+/*0.对网页做一些统一的设置*/
+/*  *通用选择器*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*1.给网页分区，设置每个区域的尺寸*/
+div {
+    border: 1px solid red;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 960px;
+    height: 61px;
+}
+
+.menu {
+    height: 91px;
+}
+
+.core {
+    height: 410px;
+    /*内边距的空间用来放渐变条*/
+    padding-top: 10px;
+}
+
+.copy {
+    width: 960px;
+    height: 50px;
+}
+
+.content {
+    width: 950px;
+    height: 390px;
+    border: 5px solid #8ac1db;
+}
+
+/*派生选择器*/
+.content div {
+    width: 910px;
+    height: 40px;
+}
+
+.content .data {
+    height: 310px;
+}
+
+
+/* 2.设置背景*/
+body {
+    background-color: #0EA8D8;
+}
+
+.logo {
+    background-image: url("../../img/pugongying.png");
+}
+
+.menu {
+    background-color: #0488BB;
+}
+
+.content{
+    background-color: #e8f3f8;
+}
+
+/*渐变条做成一个小图的目的，是为了在
+网络上传输时更新，更节约流量。
+但它不够大，需要横向平铺*/
+.core{
+    background:
+            url("../../img/jianbiantiao.png")
+            repeat-x top;
+}
+
+/*3.设置文本样式*/
+body{
+    font-family:"微软雅黑" ,"文泉驿正黑","黑体";
+    font-size: 14px;
+}
+
+.logo{
+    text-align: right;
+    line-height: 61px;
+}
+.logo a{
+    margin-right: 40px;
+    color: #FFF;
+    text-decoration: none;
+}
+.logo a:hover{
+    font-weight: bold;
+}
+.copy p{
+    color:#FFF;
+    text-align:center;
+    line-height: 25px;
+}
+
+/*4.设置表格样式*/
+.data table{
+    border: 1px solid #ccc;
+/*    边框合并必须写在table上*/
+    border-collapse: collapse;
+    width:100%
+}
+.data td{
+    border: 1px solid #ccc;
+    text-align: center;
+}
+/*单元格中的文字默认垂直居中*/
+.data thead tr{
+    background-color: #fbedce;
+    height:40px;
+    font-weight: bold;
+}
+.data tbody tr{
+    background-color: #FFF;
+    height: 32px;
+}
+.data tbody tr:hover{
+    background-color: #f7f9fd;
+}
+
+/*设置按钮的样式*/
+.modify{
+    padding-left: 15px;
+    background:
+            url("../../img/modification.png")
+            no-repeat left;
+    border: 0;
+}
+.delete{
+    padding-left: 13px;
+    background:
+            url("../../img/delete.png")
+            no-repeat left;
+    border: 0;
+}
+.data input:hover{
+    /*将鼠标形状设置为手型*/
+    cursor: pointer;
+}
+
+/*5.logo图片和消息框的定位问题*/
+.logo img{
+    float: left;
+}
+.content{
+    /*将其作为子元素绝对定位的目标*/
+    position: relative;
+}
+.content .msg{
+    position: absolute;
+    left:200px;
+    top:100px;
+    width: 500px;
+    height: 80px;
+}
+.msg img{
+    float: right;
+    margin: 5px;
+}
+.msg img:hover{
+    cursor: pointer;
+}
+.msg p{
+    margin-left: 38px;
+    line-height: 80px;
+}
+.msg{
+    background: #FDECEC
+        url(../../img/succ.png)
+        no-repeat 10px 29px;
+    border: 1px solid #F68A8A;
+}
+/*6.设置菜单栏*/
+.menu ol{
+    border: 1px solid yellow;
+    width: 960px;
+    height: 91px;
+    margin: 0 auto;
+    list-style-type: none;
+}
+.menu ol li{
+    margin: 7px 14px;
+    float: left;
+    width: 68px;
+    height: 77px;
+    cursor: pointer;
+}
+
+.index{
+    background: url("../../img/home-out.png") no-repeat;
+}
+.index:hover{
+    background:url("../../img/home-on.png") no-repeat ;
+}
+
+
+/*收尾：去掉调式过程中的边框*/
+.menu,.menu ol,.menu li ,div{
+    border: 0;
+}

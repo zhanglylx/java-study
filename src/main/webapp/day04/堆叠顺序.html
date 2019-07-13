@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background-color: #066;
+            width: 800px;
+            height: 500px;
+            margin:20px auto;
+            position: relative;
+        }
+        #i1,#i2,#i3{
+            position: absolute;
+        }
+        #i1{
+            left: 5px;
+            top:5px;
+        }
+        #i2{
+            left: 30px;
+            top:20px;
+        }
+        #i3{
+            left: 110px;
+            top:60px;
+        }
+        /*堆叠顺序：元素显示的层次，
+        数越大越靠上，反之越靠下*/
+        img:hover{
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../images/2.png" id="i1"/>
+        <img src="../img/pugongying.png" id="i2"/>
+        <img src="../img/logo.png" id="i3"/>
+    </div>
+</body>
+</html>

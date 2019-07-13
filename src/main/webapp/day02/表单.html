@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+    <!--  1.表单元素
+        用来声明数据提交的范围，
+        只有在此元素内的数据可以
+        提交给服务器。-->
+    <!--  action:声明数据提交的目标（url）
+    method、enctype:后期使用-->
+    <form action="http://www.baidu.com">
+        <!--  2.表单控件：用来让用户输入数据。  分为两大类-->
+        <!--  1：input元素（9个），
+            他们之间用type属性区分。-->
+        <!--  文本框
+            value:设置默认值。
+            maxlength：设置最大长度。
+            readonly：设置只读。-->
+        <p>
+            账号：<input type="text"
+                    value="zhanglianyu"
+                    maxlength="10"
+                    readonly/>
+        </p>
+        <!-- 密码框-->
+        <p>
+            密码：<input type="password">
+        </p>
+        <!--   单选框
+            name:组名，同一组radio互斥
+            ckecked：默认选中
+            value：将在再用-->
+        <p>
+            性别：
+            <input type="radio" name="sex" checked/>男
+            <input type="radio" name="sex"/>女
+        </p>
+
+        <!-- 多选框
+          name、value：将来再讲
+          checked：设置默认选中-->
+        <p>
+             兴趣：
+            <input type="checkbox"checked/>音乐
+            <input type="checkbox"/>跑步
+            <input type="checkbox"/>打篮球
+            <input type="checkbox"/>爬山
+
+        </p>
+        <!--  文件框-->
+        <p>
+            头像：<input type="file">
+
+        </p>
+
+        <!-- 隐藏框-->
+        <p>
+            <input type="hidden" value="abc"/>
+        </p>
+
+        <!-- 按钮
+            submit：提交表单中的数据。
+            reset：将表单中的数据重置为初始值。
+            button：没有任何功能，需通过js定义功能。
+            -->
+        <p>
+            <input type="submit" value="注册"/>
+            <input type="reset" value="重置"/>
+            <input type="button" value="普通按钮"/>
+
+        </p>
+
+        <!-- 2:其他元素（3个）-->
+        <!--  2.1 : label :用来管理表单中的文本。
+            可以将文本与控件绑定在一起，从而增加了
+            控件的受力面积，从而增加了页面的易用性。
+            id:元素的唯一标识，相当于元素的身份证号
+            任何元素有可以有id，程序员有义务保障元素
+            的ID不重复-->
+        <p>
+            <input type="checkbox" id="c1"/>
+            <label for="c1">我已阅读并自愿遵守此协议！</label>
+        </p>
+        <!--  2.2 : select:下拉选择框
+                selected：设置默认选中。
+                value：将来再讲。-->
+        <p>
+            城市：
+            <select>
+                <option>请选择</option>
+                <option selected>北京</option>
+                <option>上海</option>
+                <option>深圳</option>
+                <option>杭州</option>
+                <option>广州</option>
+            </select>
+
+        </p>
+
+        <!--  2.3 : textarea：文本域-->
+        <p>
+            简介：
+            <textarea cols="30" rows="5">这是文本域的默认值</textarea>
+        </p>
+
+    </form>
+
+</body>
+</html>

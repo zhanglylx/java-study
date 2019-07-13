@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* 1.四个边设置相同的边框*/
+        p{
+            /*       宽度  边框类型（dashed：虚线） 颜色*/
+            border: 1px dashed red;
+        }
+        /*2.单个边设置边框
+            left、right、top、bottom*/
+        h1{
+        border-left: 10px solid blue;
+        }
+    /*  3.块元素一般宽度默认是100%，高度会自适应，内容越多，它越高。
+            当给它固定高度时可能会导致内容溢出。*/
+        p{
+            width: 300px;
+            height: 60px;
+        /* 溢出时的处理方式 */
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>苍老师</h1>
+    <p>
+        张连宇，是中文万维测试经理。
+        是测试改革的先驱。
+        同时他也是一名电脑爱好者。
+        他的电脑DIY很厉害！
+        他最擅长进行电脑的改装和搭配，
+        能够体现出电脑改装的乐趣。
+    </p>
+</body>
+</html>
