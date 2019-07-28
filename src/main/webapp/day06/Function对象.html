@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Function
+        //通过function关键字所声明的
+        //是一个函数(Function)对象。
+        //浏览器加载网页到此处时，并没有
+        //调用此对象，仅仅是创建了对象而已。
+        function sum() {
+            var s = 0;
+            if (arguments.length > 0) {
+                for (var i = 0; i < arguments.length; i++) {
+                    s += arguments[i];
+                }
+            }
+            return s;
+        }
+    //    一般是在点击按钮时调用函数对象
+    //    也可以在页面加载时直接调用它
+        console.log(sum(1,2,3));
+        console.log(sum(4,5,6,7,8));
+        console.log(sum());
+    //    结论，js的函数没有重载，但可以
+    //    实现和重载一样的调用方式
+    </script>
+</head>
+<body>
+
+</body>
+</html>

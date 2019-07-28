@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Date
+        //    1.创建客户机的当前时间
+        var d1 = new Date();
+        console.log(d1);
+        //    2.创建指定的时间(一般来源于服务器)
+        var d2 = new Date("2016/12/12 12:12:12");
+        console.log(d2);
+        //    3.转换为本地日期/时间格式的字符串
+        console.log(d1.toLocaleDateString());
+        console.log(d1.toLocaleTimeString())
+        //    4.读写时间分量（某一个部位的值）
+        //    读:getXXX()    写:setXXX()
+        var y = d1.getFullYear();
+        //月份从0开始
+        var m = d1.getMonth();
+        var d = d1.getDate();
+        var today = y + "年" + (m + 1) + "月" + d + "日";
+        console.log(today);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

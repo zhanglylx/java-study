@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Array(js中的数组都是Object数组)
+        //    1.如何创建数组
+        //    若创建数组时就已知数据
+        var a1 = ["zhanglianyu", 25, true];
+        console.log(a1[0])
+        //    2.若创建数组时不知道要存什么数据，
+        //    就创建一个空数组。
+        var a2 = new Array();
+        //    后面知道要存什么数据时，追加数据
+        a2.push("lisi");
+        a2.push(28);
+        a2.push(false);
+        console.log(a2[2]);
+        //    3.数组倒转
+        var arr = [5, 4, 3, 2, 1, "aaa","bbb","2222","s","a"];
+        console.log(arr.toString());
+        arr.reverse();
+        console.log(arr.toString())
+        //    4.数组排序
+        //数组默认按照字符串由小到大排序
+        arr.sort();
+        console.log(arr.toString())
+        //可以通过替换比较方法来改变排序
+        //结果,在js里方法也是对象,可以做参数,
+        //由于该方法不需要复用,所以一般写成
+        //匿名函数.
+        arr.sort(function (a, b) {
+            return a - b;
+        });
+        console.log(arr.toString())
+    </script>
+</head>
+<body>
+                2:11:35
+</body>
+</html>

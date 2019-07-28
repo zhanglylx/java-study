@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function calculate() {
+
+            var n = document.getElementById("num");
+            //在使用eval时，建议在字符串前后
+            //加上括号，可以避免一些奇怪的问题
+            try {
+                n.value = eval("(" + n.value + ")");
+            } catch (e) {
+                n.value = "Error:"+e.toString();
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div>
+    <input type="text" id="num"/>
+    <input type="button" value="="
+           onclick="calculate()"/>
+</div>
+</body>
+</html>

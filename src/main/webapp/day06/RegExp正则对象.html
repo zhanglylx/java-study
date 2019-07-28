@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //RegExp
+        var str = "you can you up,no can no bb";
+    //    7.1 创建正则对象
+        var reg = /no/;
+    //    7.2 正则对象的方法
+    //    1.reg.exec(str)
+    //    普通模式:从str中找出与reg匹配的第一个子串。
+        console.log(reg.exec(str));
+    //    全局模式:第n次调用则从str中找出与reg匹配的第n个子串
+        var reg = /no/g;
+        console.log(reg.exec(str));
+        console.log(reg.exec(str));
+        console.log(reg.exec(str));
+        console.log(reg.exec(str));
+    //    2.reg.test(str)
+    //    7.3判断str中是否包含与reg匹配的子串
+        console.log(reg.test(str));
+    //    字符串支持正则的方法
+    //    1.str.replace(reg,"");
+        console.log(str.replace(reg,"bu"));
+        //字符串是不可变的，修改字符串的方法
+        //并没有改变原字符串，而是生成了新字符串。
+        console.log(str);
+    //    2.str.match(reg)
+    //    从str中找出和reg匹配的子串
+        console.log(str.match(reg));
+    //    3.str.search(reg)
+    //    从str中找出和reg匹配的第一个字串的索引
+        console.log(str.search(reg))
+    </script>
+</head>
+<body>
+
+</body>
+</html>

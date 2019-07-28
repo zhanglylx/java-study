@@ -1,0 +1,32 @@
+一.常用内置对象
+    1.String
+    --和Java类似
+    2.Number(*)
+    --toFixed(num)
+    3.Boolean   没有什么API
+    4.Arrat(*)
+    5.Math
+    --和Java类似
+    6.Date
+    --如何创建日期
+    --如何转换为本地格式的字符串
+    --如何读写时间分量
+    7.RegExp(*)
+    --如何创建正则对象
+    7.1 直接量
+        var reg = /正则表达式/模式
+        举例:/\d/g
+     7.2 创建对象
+     new  RegExp(正则字符串，模式)
+     举例:new RegExp("\\d","g")
+        匹配模式
+           g:global,全局检测字符串
+           i:ignore,忽略大小写来检测字符串。
+     7.3 正则对象的方法
+         1.reg.exec(str):
+         全局模式:第n次调用从str里找出和reg匹配的第n个子串
+         普通模式:从str里找出和reg匹配的第一个子串
+         2.reg.test(str)特别常用，十分重要
+         判断str里是否包含和reg匹配的子串
+    8.Function(*)
+
