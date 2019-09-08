@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            //    1.根据ID查询节点
+            //    2.根据标签名查询节点
+            //document.getElementsByTagName()
+            //    3.根据层次查询节点
+            //    查询某个节点的亲戚（父亲，孩子，兄弟）
+            //    3.1查询父亲
+            var gz = document.getElementById("gz");
+            var ul = gz.parentNode;
+            console.log(ul);
+            //        3.2查询孩子
+            //        包括空格（了解即可）
+            console.log(ul.childNodes);
+            //      只包含元素（重点掌握）
+            console.log(ul.getElementsByTagName("li"));
+            //3.3查询兄弟
+            //某节点.父亲.孩子们[i]
+            var jms = gz.parentNode.getElementsByTagName("li")[4];
+            console.log(jms.innerHTML);
+            //    4.根据name名称查询节点
+        //    一般用于查询一组单选/多选
+            var sex = document.getElementsByName("sex");
+            console.log(sex[1]);
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li>北京</li>
+    <li>上海</li>
+    <li>深圳</li>
+    <li id="gz">广州</li>
+    <li>佳木斯</li>
+    <li>廊坊</li>
+</ul>
+<p>
+    <input type="radio" name="sex"/>男
+    <input type="radio" name="sex"/>女
+</p>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一次性定时器案例</title>
+    <script>
+        var sendtime;
+        function send() {
+            var p = document.getElementById("msg");
+            if (sendtime != null) {
+                p.innerHTML = "正在发送中";
+                return;
+            }
+
+            p.innerHTML = "正在发送";
+            //推迟三秒显示已发送
+            sendtime = setTimeout(function () {
+                p.innerHTML = "已发送";
+                sendtime = null;
+            }, 3000);
+        }
+
+        function cancel() {
+            var p = document.getElementById("msg");
+            if (sendtime != null) {
+                clearTimeout(sendtime);
+                var b = false;
+                if (sendtime == null) {
+                    p.innerHTML = "撤销失败";
+                    b=true;
+                }
+                sendtime = null;
+                if(!b)p.innerHTML = "已撤销";
+            } else {
+                p.innerHTML = "未在发送中";
+            }
+        }
+    </script>
+</head>
+<body>
+<p>
+    <input type="button" value="发送" onclick="send();"/>
+    <input type="button" value="撤销" onclick="cancel()"/>
+</p>
+<p id="msg"></p>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        th {
+            background-color: #eee;
+        }
+
+        .total {
+            text-align: right;
+        }
+    </style>
+    <script>
+        //加入购物车
+        //调用时传入this，它指代你正点击
+        //的那个元素。给方法加参数接收该值，
+        //注意参数名不能是关键字this。
+        function add_shoppingcatr(btn) {
+            //获取按钮的爷爷(tr)
+            var tr = btn.parentNode.parentNode;
+            //获取爷爷的孩子们(tds)
+            var tds = tr.getElementsByTagName("td");
+            //获取第0个td的内容(商品名称)
+            var name = tds[0].innerHTML;
+            console.log(name);
+            //获取第1个td的内容(单价)
+            var price = tds[1].innerHTML;
+            console.log(price);
+            //创建新行
+            var ntr = document.createElement("tr");
+            //给新的行设置内容
+            ntr.innerHTML =
+                '<td>' + name + '</td>' +
+                '<td>' + price + '</td>' +
+                '<td align="center">' +
+                '<input type="button" value="-" onclick="decrease(this)"/> ' +
+                '<input type="text" size="3" readonly  value="1"/> ' +
+                '<input type="button" value="+" onclick="addNumber(this)"/>' +
+                '</td>' +
+                '<td>' + price + '</td>' +
+                '<td align="center">' +
+                '<input type="button" value="x" onclick="deleteCommodity(this)"/>' +
+                '</td>';
+            //    将新行追加到tbody下
+            var tody = document.getElementById("goods");
+            tody.appendChild(ntr);
+            sum();
+        }
+
+        /**
+         * 减少数量
+         * @param btn
+         */
+        function decrease(btn) {
+            command(btn, false);
+
+        }
+
+        /**
+         * 添加数量
+         * @param btn
+         */
+        function addNumber(btn) {
+            command(btn, true);
+
+        }
+
+        function command(btn, add) {
+            //获取+号的父亲
+            var td = btn.parentNode;
+            //获取+号的孩子们
+            var inputs = td.getElementsByTagName("input");
+            //获取文本框
+            var text;
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].getAttribute("type") === "text") {
+                    text = inputs[i];
+                    break;
+                }
+            }
+            //获取td的父亲的孩子们
+            var td = td.parentNode.getElementsByTagName("td");
+            //获取金额
+            var money = td[td.length - 2];
+            //获取单价
+            var danjian = td[1].innerHTML;
+            if (add === true) {
+                text.value++;
+                money.innerHTML = danjian * text.value;
+            } else {
+
+                if (parseInt(text.value) !== 1) {
+                    text.value--;
+                    money.innerHTML = money.innerHTML - danjian;
+                }
+
+            }
+            sum();
+
+        }
+
+
+        function deleteCommodity(btn) {
+            //获取删除按钮的爷爷
+            var tr = btn.parentNode.parentNode;
+            //获取tr的父亲删除孩子tr
+            tr.parentNode.removeChild(tr);
+
+        }
+
+        function sum() {
+            //获取tbody内所有的行
+            var body = document.getElementById("goods");
+
+            var trs = body.getElementsByTagName("tr");
+            console.log(trs.length)
+            var s = 0;
+            //便利这些行
+            for (var i = 0; i < trs.length; i++) {
+                //获取本行的金额
+                var td3 = trs[i].getElementsByTagName("td")[3];
+                console.log(td3);
+                //将td3的内容（金额）进行累加
+                s += parseInt(td3.innerHTML);
+            }
+            document.getElementById("totalMoney").innerHTML = s;
+        }
+    </script>
+</head>
+<body>
+<h1>真划算</h1>
+<table border="1" cellspacing="0" width="40%">
+    <tr>
+        <th>商品</th>
+        <th>单价(元)</th>
+        <th>颜色</th>
+        <th>库存</th>
+        <th>好评率</th>
+        <th>操作</th>
+    </tr>
+    <tr>
+        <td>罗技M185鼠标</td>
+        <td align="center">80</td>
+        <td>黑色</td>
+        <td>893</td>
+        <td>98%</td>
+        <td align="center">
+            <input type="button" value="加入购物车" onclick="add_shoppingcatr(this);"/>
+        </td>
+    </tr>
+    <tr>
+        <td>蝰蛇键盘</td>
+        <td align="center">180</td>
+        <td>蓝色</td>
+        <td>111</td>
+        <td>98%</td>
+        <td align="center">
+            <input type="button" value="加入购物车" onclick="add_shoppingcatr(this);"/>
+        </td>
+    </tr>
+    <h1>购物车</h1>
+    <table border="1" cellspacing="0" width="40%">
+        <thead>
+        <tr>
+            <th>商品</th>
+            <th>单价(元)</th>
+            <th>数量</th>
+            <th>金额(元)</th>
+            <th>删除</th>
+        </tr>
+        </thead>
+        <tbody id="goods">
+        <!--        <tr>-->
+        <!--            <td>罗技M185鼠标</td>-->
+        <!--            <td>80</td>-->
+        <!--            <td align="center">-->
+        <!--                <input type="button" value="-"/>-->
+        <!--                <input type="text" size="3" readonly value="1"/>-->
+        <!--                <input type="button" value="+"/>-->
+        <!--            </td>-->
+        <!--            <td>80</td>-->
+        <!--            <td align="center">-->
+        <!--                <input type="button" value="x"/>-->
+        <!--            </td>-->
+        <!--        </tr>-->
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr class="total">
+            <td colspan="3">合计:</td>
+            <td id="totalMoney"></td>
+            <td></td>
+        </tfoot>
+    </table>
+
+</table>
+</body>
+</html>

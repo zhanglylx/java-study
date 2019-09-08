@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var cities = null;
+        window.onload = function () {
+            //模拟查询所有的城市
+            cities = [
+                ["石家庄", "保定", "廊坊"],
+                ["广州", "东莞", "佛山"],
+                ["南宁", "桂林", "玉林"]
+            ];
+        }
+
+        function chg() {
+            //获取省份下拉选
+            var sel1 = document.getElementById("province");
+            //获取选中省份的序号
+            var n = sel1.value;
+            //获取该省份所对应的省市
+            var pcities = null;
+            if (cities) {
+                pcities = cities[n];
+            }
+            //删除旧的城市
+            var sel2 = document.getElementById("city");
+            sel2.innerHTML = "<option>请选择</option>>";
+            // var options = sel2.getElementsByTagName("option");
+            // for (var i = options.length-1; i >= 0; i--) {
+            //     sel2.removeChild(options[i]);
+            // }
+            //追加新的城市
+            if (pcities) {
+                for (var i = 0; i < pcities.length; i++) {
+                    var option = document.createElement("option");
+                    option.innerHTML = pcities[i];
+                    sel2.appendChild(option);
+                }
+            }else{
+                var option = document.createElement("option");
+                option.innerHTML = "获取错误";
+                sel2.appendChild(option);
+            }
+        }
+
+    </script>
+</head>
+<body>
+省
+<select onchange="chg();" id="province">
+    <option>请选择</option>
+    <option value="0">河北省</option>
+    <option value="1">广东省</option>
+    <option value="2">广西省</option>
+</select>
+市:
+<select id="city">
+    <option>请选择</option>
+</select>
+
+</body>
+</html>

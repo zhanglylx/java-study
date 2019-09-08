@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //调用window对象的属性或方法
+        //可以省略"window."
+        //1.弹出框
+        //    普通弹出框
+        function f1() {
+            alert("你好！");
+        }
+
+        //    确认框
+        function f2() {
+            var v = confirm("你吃了吗？");
+            console.log(v);
+        }
+
+        //    输入框
+        function f3() {
+            var v = prompt("你吃的什么？");
+            console.log(v);
+        }
+
+        //    2.定时器
+        //    周期性定时器
+        //    每隔N毫秒执行一次函数，反复执行，直到到达停止条件为止。
+        function f4() {
+            var index = 5;
+            //    启动定时器,返回定时器的id
+            // id用来停止定时器
+            var id = setInterval(function () {
+                console.log(index);
+                if (!index) {
+                    console.log("磅");
+                    //停止这个定时器
+                    clearInterval(id);
+                }
+                index--;
+            }, 1000);
+        //    启动定时器就相当于启动了一个支线程
+        //    当前方法f4相当于主线程，2个线程并发执行
+        //    不互相等待，因此主线程在启动完支线程后
+        //    立刻向下执行，而支线程却需要在1秒后执行。
+        }
+
+        //    一次性定时器
+        //    推迟N毫秒执行一次函数，执行完之后
+        //    自动停止，也可以在未执行前手动停止。
+        var id;
+        function f5() {
+            //启动定时器,若想在未执行定时器前
+            //将他停止，需要使用id
+            id=setTimeout(function () {
+                console.log("ding,ding,ding");
+            },3000);
+        }
+        function f6() {
+            //若定时器已经执行，则取消无效
+            //若定时器还未执行，则可以取消
+            clearTimeout(id);
+        }
+    </script>
+</head>
+<body>
+<p>
+    <input type="button" value="按钮1" onclick="f1();"/>
+    <input type="button" value="按钮2" onclick="f2();"/>
+    <input type="button" value="按钮3" onclick="f3();"/>
+</p>
+<p>
+    <input type="button" value="按钮4" onclick="f4();"/>
+    <input type="button" value="按钮5" onclick="f5();"/>
+    <input type="button" value="按钮6" onclick="f6();"/>
+</p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f1() {
+            //    创建新的li
+            var li = document.createElement("li");
+            //    给li设置内容
+            li.innerHTML = "新疆";
+            //    再将它追加到ul下面
+            var ul = document.getElementById("city");
+            ul.appendChild(li);
+
+        }
+
+        function f2() {
+            //    创建新的li
+            var li = document.createElement("li");
+            //    给li设置内容
+            li.innerHTML = "杭州";
+            //    再将它追加到ul下面
+            var ul = document.getElementById("city");
+            var gz = document.getElementById("gz");
+            ul.insertBefore(li, gz);
+        }
+
+        function f3() {
+            //获取要删除元素的父亲
+            var ul = document.getElementById("city");
+            //    获取要删除的元素
+            var gz = document.getElementById("gz");
+            //    通过父亲删除孩子
+            ul.removeChild(gz);
+        }
+    </script>
+</head>
+<body>
+<p>
+    <input type="button" value="追加" onclick="f1()"/>
+    <input type="button" value="插入" onclick="f2()"/>
+    <input type="button" value="删除" onclick="f3()"/>
+</p>
+<ul id="city">
+    <li>北京</li>
+    <li>上海</li>
+    <li>深圳</li>
+    <li id="gz">广州</li>
+    <li>佳木斯</li>
+    <li>廊坊</li>
+</ul>
+</body>
+</html>

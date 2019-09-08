@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #clock {
+            border: 1px solid red;
+            width: 200px;
+            text-align: center;
+            font-size: 20px;
+            height: 30px;
+            line-height: 30px;
+        }
+    </style>
+    <script>
+        var clockId;
+
+        function startClock() {
+            if (clockId) return;
+            clockId = setInterval(function () {
+                var ct = document.getElementById("clock");
+                var date = new Date();
+                var now = date.toLocaleTimeString();
+                ct.innerHTML = now;
+            }, 1000);
+        }
+
+        function stopClock() {
+            //id非空时定时器处于启动状态
+            //此时停止它才有效
+            if (id) {
+                clearInterval(clockId);
+                //为了可以再次启动，将id清空
+                clockId = null;
+            }
+        }
+
+    </script>
+</head>
+<body>
+<p>
+    <input type="button" value="开始" onclick="startClock()"/>
+    <input type="button" value="结束" onclick="stopClock()"/>
+
+</p>
+<p id="clock">
+
+</p>
+</body>
+</html>
