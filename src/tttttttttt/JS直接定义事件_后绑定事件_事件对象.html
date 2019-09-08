@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //直接定义事件_事件对象
+        function f1(e) {
+            console.log("aaa");
+            console.log(e);
+        }
+
+        //    后绑定事件
+        window.onload = function () {
+            var btn = document.getElementById("btn2");
+            btn.onclick =
+            function f2(event) {
+                console.log("bbb");
+                console.log(event);
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="按钮1" onclick="f1(event);"/>
+<input type="button" value="按钮2" id="btn2"/>
+</body>
+</html>
