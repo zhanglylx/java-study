@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var div = document.getElementById("jsq");
+            div.onclick = function (e) {
+                //获取事件源
+                var obj = e.srcElement || e.target;
+                //只处理input
+                if (obj.nodeName !== "INPUT") {
+                    return false;
+                }
+                var p = document.getElementById("screen");
+                ;
+                if (obj.value === "C") {
+                    //清空p
+                    p.innerHTML = "";
+                } else if (obj.value === "=") {
+                    //计算
+                    try {
+                        var v = eval("(" + p.innerHTML + ")");
+                        p.innerHTML =v;
+                    } catch (e) {
+                        p.innerHTML = "Err";
+                    }
+
+                } else {
+                    //累加
+                    p.innerHTML += obj.value;
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div class="panel" id="jsq">
+    <div>
+        <p id="screen"></p>
+        <input type="button" value="C"/>
+        <div style="clear:both"></div>
+        1:20:56
+    </div>
+    <div>
+        <input type="button" value="7"/>
+        <input type="button" value="8"/>
+        <input type="button" value="9"/>
+        <input type="button" value="+"/>
+    </div>
+    <div>
+        <input type="button" value="4"/>
+        <input type="button" value="5"/>
+        <input type="button" value="6"/>
+        <input type="button" value="-"/>
+    </div>
+    <div>
+        <input type="button" value="1"/>
+        <input type="button" value="2"/>
+        <input type="button" value="3"/>
+        <input type="button" value="*"/>
+    </div>
+    <div>
+        <input type="button" value="0"/>
+        <input type="button" value="="/>
+        <input type="button" value="/"/>
+    </div>
+</div>
+</body>
+</html>
