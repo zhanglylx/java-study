@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script>
+        window.onload = function () {
+            //1.基本选择器，和css选择器一样
+            //2.层次选择
+            //2.1 选择子孙/儿子 和css派生选择器一样
+            //2.2 选择弟弟
+            console.log($("#gz+li"));
+            //如果弟弟类型相同则只写+也可以
+            console.log($("#gz+"));
+            //选择所有弟弟
+            console.log($("#gz~"));
+            //3.过滤选择器(重点)
+            //3.1基本过滤选择器(重点)
+                //第一个元素
+                console.log($("li:first"));
+                //选择偶数
+                console.log($("li:even"));
+                //选择指定下标
+                console.log($("li:eq(1)"));
+            //4.表单选择器
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li>北京</li>
+    <li>上海</li>
+    <li id="gz">广州</li>
+    <li>深圳</li>
+    <li>天津</li>
+</ul>
+</body>
+</html>

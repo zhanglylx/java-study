@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script>
+        function print1() {
+            //使用选择器获取的是jQuery对象
+            var $ps = $("p");
+            console.log($ps);
+            for (var i = 0; i < $ps.length; i++) {
+                //从jQuery对象中获取的值是dom
+                var p = $ps[i];
+                console.log(p.innerHTML);
+            }
+        }
+
+        //调用时传入的this，它只在点击的
+        //那个图片，这是一个dom对象
+        function chg(img) {
+            console.log($(img).width());
+            console.log($(img).height());
+            if($(img).width() === 12){
+                $(img).width(250).height(250);
+            }else{
+                $(img).width(12).height(12);
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+
+<input type="button" value="打印" onclick="print1();"/>
+<p>1.Jquery对象才能调用jQuery方法</p>
+<p>2.dom对象才能嗲用dom方法</p>
+<p>3.jQuery对象本质是dom数组</p>
+<div>
+    <img src="../../img/delete.png" onclick="chg(this);"/>
+</div>
+
+
+</body>
+</html>

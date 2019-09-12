@@ -1,0 +1,5 @@
+选择器底层实现原理：
+var ps = document.getElementsByTagName()；
+var jobi = new Object();
+jobj.data = ps;
+jobi.css = function(){}
