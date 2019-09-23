@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script>
+        //页面加载之后调用这个函数
+        //其作用等价于：windows.onload = function(){}
+        $(function () {
+            //    1.读写节点
+            //    1.1读写内容（双标签有内容html（） == innerHTML，）
+            console.log($("p:eq(0)").html())
+            $("p:eq(0)").html("jQuery对<u>DOM操作</u>提供了支持");
+            //text（）==innerText  用法同上
+            //    1.2读写值（表单控件有值）
+            //val() == value
+            console.log($(":button:first").val("BBB"));
+            //    1.3读写属性
+            //        attr() == get/setAttribute()
+            console.log($("img:first").attr("src"));
+            $("img:first").attr("src", "../../img/close.png");
+        });
+    </script>
+</head>
+<body>
+<p>
+    jQuery对<b>DOM操作</b>提供了支持
+</p>
+<p>
+    <input type="button" value="AAA"/>
+</p>
+<p>
+    <img src="../../img/delete.png"/>
+</p>
+</body>
+</html>

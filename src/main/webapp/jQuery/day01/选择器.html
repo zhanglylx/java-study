@@ -17,13 +17,25 @@
             console.log($("#gz~"));
             //3.过滤选择器(重点)
             //3.1基本过滤选择器(重点)
-                //第一个元素
-                console.log($("li:first"));
-                //选择偶数
-                console.log($("li:even"));
-                //选择指定下标
-                console.log($("li:eq(1)"));
+            //第一个元素
+            console.log($("li:first"));
+            //选择偶数
+            console.log($("li:even"));
+            //选择指定下标
+            console.log($("li:eq(1)"));
+            //排除
+            console.log($("li:not(#gz)"));
+            //3.2内容过滤选择器
+            console.log($("li:contains('海')"));
+            //3.3可见性过滤选择器
+            console.log($("li:hidden"));
+            //3.4属性过滤选择器
+            console.log($("li[style]"));
+            //3.5状态过滤选择器
+            console.log($("input:enabled"));
+            console.log($("input:checked"));
             //4.表单选择器
+            console.log($(":radio"));
         }
     </script>
 </head>
@@ -34,6 +46,18 @@
     <li id="gz">广州</li>
     <li>深圳</li>
     <li>天津</li>
+    <li style="display: none">杭州</li>
 </ul>
+<p>
+    <!--    redonly:只读，但是数据有效，依然可以提交给服务器。-->
+    <!--    disabled:不可用，数据无效，不能提交给服务器-->
+    <input type="text" disabled/>
+    <input type="password"/>
+</p>
+<p>
+    <input type="radio" name="sex" checked/>
+    <input type="radio" name="sex"/>
+    1:15
+</p>
 </body>
 </html>

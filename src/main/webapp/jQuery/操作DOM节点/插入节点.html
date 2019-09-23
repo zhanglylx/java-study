@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            //创建节点
+            var $li1 = $("<li>杭州</li>");
+            var $li2 = $("<li>苏州</li>");
+            console.log($li1);
+            //增加节点
+            $("ul:eq(0)").prepend($li1);
+            $("#gz").after($li2);
+        })
+2:21
+    </script>
+</head>
+<body>
+<ul>
+    <li>北京</li>
+    <li>上海</li>
+    <li id="gz">广州</li>
+    <li>深圳</li>
+    <li>天津</li>
+</ul>
+</body>
+</html>
