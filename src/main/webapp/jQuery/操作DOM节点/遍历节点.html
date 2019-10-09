@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            //遍历节点：查找某节点的亲戚
+            //有些时候我们调用别人的方法得到
+            //一个节点，对其进行一些操作，然后
+            //又要对此节点的亲戚进行操作，此时
+            //无法写选择器，只能调用这样的方法。
+            //假设调用了别人的方法得到了广州
+            var $gz = $("#gz");
+            //要获取广州的亲戚做进一步处理
+            console.log($gz);
+            console.log($gz.parent());
+            console.log($gz.prev());
+            console.log($gz.siblings());
+            //假设我调用了别人的方法得到了ul
+            var $ul = $("ul");
+            //要获取列表的孩子做进一步处理
+            console.log($ul.find("li:gt(2)"));
+
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>北京</li>
+    <li>上海</li>
+    <li id="gz">广州</li>
+    <li>深圳</li>
+    <li>天津</li>
+</ul>
+</body>
+</html>

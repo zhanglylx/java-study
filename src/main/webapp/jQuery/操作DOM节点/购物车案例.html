@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        th {
+            background-color: #eee;
+        }
+
+        .total {
+            text-align: right;
+        }
+    </style>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script>
+        //加入购物车
+        //$obj.eq(i) == $($obj[i])
+        function add_shoppingcart(btn) {
+            //获取按钮的父亲的兄弟们
+            var $tds = $(btn).parent().siblings();
+            //    获取td0的内容（商品名）
+            var name = $tds.eq(0).html();
+            //    获取td1的内容（单价）
+            var price = $tds.eq(1).html();
+            //    创建节点
+            var $tr =
+                $(
+                    '<tr>' +
+                    '<td>' + name + '</td>' +
+                    '<td>' + price + '</td>' +
+                    '<td align="center">' +
+                    '<input type="button" value="-" onclick="jian(this);"/> ' +
+                    '<input type="text" size="3" readonly value="1"/> ' +
+                    '<input type="button" value="+" onclick="increase(this);"/>' +
+                    '</td>' +
+                    '<td>' + price + '</td>' +
+                    '<td align="center">' +
+                    '<input type="button" value="x" onclick="deleteGood(this);"/>' +
+                    '</td>' +
+                    '</tr>'
+                );
+            $("#goods").append($tr);
+            totalMoney();
+        }
+
+        //加法
+        function increase(btn) {
+            //获取按钮的哥哥的值（数量）
+            var amount = $(btn).prev().val();
+            //    将数量+1，在写回去
+            $(btn).prev().val(++amount);
+            //获取按钮的父亲的哥哥的内容（单件）
+            var $tds = $(btn).parent().siblings();
+            var price = $tds.eq(1).html();
+            //写入按钮的父亲的弟弟内
+            $(btn).parent().next().html(amount * price);
+            totalMoney();
+        }
+
+
+        //减法
+        function jian(btn) {
+            //获取按钮的哥哥的值（数量）
+            var amount = $(btn).next().val();
+            if (parseInt(amount) === 1) {
+                deleteGood(btn);
+                return;
+            }
+            //    将数量-1，在写回去
+            $(btn).next().val(--amount);
+
+            //获取按钮的父亲的哥哥的内容（单件）
+            var $tds = $(btn).parent().siblings();
+            var price = $tds.eq(1).html();
+            //写入按钮的父亲的弟弟内
+            $(btn).parent().next().html(amount * price);
+            totalMoney();
+        }
+
+        function deleteGood(btn) {
+            $(btn).parent().parent().remove();
+            totalMoney();
+        }
+
+        function totalMoney() {
+            var goods = $("#goods").children().find("td:eq(3)");
+            console.log(goods)
+            var sum = 0;
+            for (var i = 0; i < goods.length; i++) {
+                console.log(parseInt(goods[i].innerHTML))
+                sum += parseInt(goods[i].innerHTML);
+
+            }
+            $("#totalMoney").html(sum)
+        }
+    </script>
+</head>
+<body>
+<h1>真划算</h1>
+<div id="shopping">
+    <table border="1" cellspacing="0" width="40%">
+        <tr>
+            <th>商品</th>
+            <th>单价(元)</th>
+            <th>颜色</th>
+            <th>库存</th>
+            <th>好评率</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>罗技M185鼠标</td>
+            <td align="center">80</td>
+            <td>黑色</td>
+            <td>893</td>
+            <td>98%</td>
+            <td align="center">
+                <input type="button" value="加入购物车" class="shoppincatr" onclick="add_shoppingcart(this)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>蝰蛇键盘</td>
+            <td align="center">180</td>
+            <td>蓝色</td>
+            <td>111</td>
+            <td>98%</td>
+            <td align="center">
+                <input type="button" value="加入购物车" class="shoppincatr" onclick="add_shoppingcart(this)"/>
+            </td>
+        </tr>
+
+    </table>
+</div>
+<h1>购物车</h1>
+<table border="1" cellspacing="0" width="40%">
+    <thead>
+    <tr>
+        <th>商品</th>
+        <th>单价(元)</th>
+        <th>数量</th>
+        <th>金额(元)</th>
+        <th>删除</th>
+    </tr>
+    </thead>
+    <tbody id="goods">
+    <!--            <tr>-->
+    <!--                <td>罗技M185鼠标</td>-->
+    <!--                <td>80</td>-->
+    <!--                <td align="center">-->
+    <!--                    <input type="button" value="-"/>-->
+    <!--                    <input type="text" size="3" readonly value="1"/>-->
+    <!--                    <input type="button" value="+"/>-->
+    <!--                </td>-->
+    <!--                <td>80</td>-->
+    <!--                <td align="center">-->
+    <!--                    <input type="button" value="x"/>-->
+    <!--                </td>-->
+    <!--            </tr>-->
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr class="total">
+        <td colspan="3">合计:</td>
+        <td id="totalMoney"></td>
+        <td></td>
+    </tfoot>
+</table>
+
+</body>
+</html>

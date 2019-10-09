@@ -1,0 +1,7 @@
+一，jQuery对象和DOM对象的来源
+    通过选择器选中的对象是jQuery对象
+    通过$()所获得的对象是jQuery对象
+    jQuery赋值的方法一般返回的还是jQuery对象
+    jQuery取值的方法若返回元素则是jQuery对象
+    jQuery取值的方法若返回文字则是String（内置对象）
+    通过控制台打印观察
