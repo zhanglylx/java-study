@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script>
+        //$(funcation(){})类似于
+        //windows.onload = funcation(){}
+        //onload若写多次则后者会覆盖前者，只有一个会生效
+        //$(fn)若写多次都有效
+        $(function () {
+            //给按钮1后绑定单击事件
+            $(":button:eq(0)").click(function (e) {
+                console.log("111");
+                //此事件对象被jQuery做了封装。
+                //因为事件对象是浏览器创建的，
+                //不同浏览器创建的事件对象有区别，
+                //开发时要兼顾这个区别，很麻烦
+                //jQuery就是想解决这个麻烦，将
+                //他们的区别进行统一，提供统一的方法
+                //取消冒泡:e.stopPropagation()
+                //获取事件源:e.target()
+                console.log(e);
+                e.target;
+                e.stopPropagation()
+            });
+        });
+        2:37
+        $(function () {
+            //后绑定hover事件，该事件是jQuery
+            //特有的事件，必须使用jQuery后绑定
+            $("img").hover(function () {
+                    console.log(1);
+                }//悬停时
+                ,
+                function () {
+                    console.log(2);
+                }//离开时
+            );
+        });
+    </script>
+</head>
+<body>
+<p>
+    <input type="button" value="按钮1"/>
+
+</p>
+<p>
+    <img src="../../img/delete.png"/>
+</p>
+</body>
+</html>

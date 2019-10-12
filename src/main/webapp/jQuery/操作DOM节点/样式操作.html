@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <style>
+        .big {
+            font-size: 30px;
+        }
+
+        .important {
+            color: red;
+        }
+    </style>
+    <script>
+        $(function () {
+            //样式操作
+            //增加一个样式
+            $("p:first").addClass("big").addClass("important");
+            //删除一个样式
+            $("p:first").removeClass("big").removeClass("important");
+            //删除所有样式
+            //removerClass()
+            //判断元素是否包含某样式
+            console.log($("p:first").hasClass("big"));
+
+        })
+        function bbb() {
+            $("p:first").toggleClass("big");
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="AAA" onclick="bbb()"/>
+<p>test</p>
+</body>
+</html>
