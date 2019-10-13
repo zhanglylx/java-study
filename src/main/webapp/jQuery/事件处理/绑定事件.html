@@ -26,18 +26,35 @@
                 e.stopPropagation()
             });
         });
-        2:37
+
         $(function () {
             //后绑定hover事件，该事件是jQuery
             //特有的事件，必须使用jQuery后绑定
             $("img").hover(function () {
                     console.log(1);
+                    //第一种方法
+                    // $(this).width(250).height(250);
+                    //第二种方法
+                    $(this).css("width", "250px").css("height", "250px")
+                    //第三种方法
+                    $(this).addClass("big");
+                    //第四种方法
+                    $(this).toggleClass("big");
                 }//悬停时
                 ,
                 function () {
                     console.log(2);
+                    $(this).width(100).height(100);
                 }//离开时
             );
+        });
+
+        $(function () {
+            //给按钮2后绑定单件事件
+            $(":button:eq(1)").click(function () {
+                //让图片在显示与隐藏之间切换
+                $("img").toggle();
+            });
         });
     </script>
 </head>
@@ -48,6 +65,9 @@
 </p>
 <p>
     <img src="../../img/delete.png"/>
+</p>
+<p>
+    <input type="button" value="按钮2"/>
 </p>
 </body>
 </html>

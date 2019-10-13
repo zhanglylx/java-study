@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            //给按钮后绑定单件事件
+            $(":button").click(function () {
+                var n = 0;
+                //启动定时器
+                var id = setInterval(function () {
+                    //获取下一个要处理的文本框
+                    var $text = $(":text").eq(n);
+                    //模拟光标切入事件
+                    $text.trigger("focus");
+                    //生成随机的分数，写入框内
+                    var s = parseInt(Math.random() * 100);
+                    console.log(Math.random());
+                    $text.val(s);
+                    if (n === $(":text").length - 1) {
+                        clearInterval(id);
+                    }
+                    n++;
+                }, 2000);
+            });
+        });
+    </script>
+</head>
+<body>
+<p>
+    <input type="button" value="打分"/>
+</p>
+<p>
+
+    苍老师:<label>
+    <input type="text"/>
+</label>
+</p>
+<p>
+    王克静:<label>
+    <input type="text"/>
+</label>
+</p>
+<p>
+    李洪河:<label>
+    <input type="text"/>
+</label>
+</p>
+</body>
+</html>
