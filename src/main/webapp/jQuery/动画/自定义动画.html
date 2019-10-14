@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            设置相对/绝对/固定定位，才能做出动画效果，动画就是连续改变元素的偏移量
+         */
+        img {
+            position: relative;
+
+        }
+
+        #gg {
+            width: 200px;
+            height: 100px;
+            border: 1px solid red;
+            position: fixed;
+            top: 50px;
+            right: -180px;
+        }
+    </style>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script>
+        var hover = false;
+        var hoverExit = false;
+
+        function f1() {
+            $("img").animate({"left": "300px"}, 3000)
+                .animate({"top": "300px"}, 3000)
+                .animate({"left": "0px"}, 3000)
+                .animate({"top": "0px"}, 3000);
+
+        }
+        2:33
+        $(function () {
+            $("#gg").hover(function () {
+                if (hover) {
+                    return;
+                }
+                hover = true;
+                $(this).animate({"right": "0px"}, 500, function () {
+                    hover = false;
+                });
+            }, function () {
+                if (hoverExit) {
+                    return;
+                }
+                hoverExit = true;
+                $(this).animate({"right": "-180px"}, 500, function () {
+                    hoverExit = false;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<p>
+    <input type="button" value="走你" onclick="f1()"/>
+</p>
+<p>
+    <img src="../../images/10%20(1).jpg"/>
+</p>
+
+<p>
+    <img src="../../images/10%20(1).jpg"/>
+</p>
+<div id="gg"></div>
+</body>
+</html>
