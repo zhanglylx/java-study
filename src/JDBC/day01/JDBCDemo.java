@@ -4,12 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.concurrent.Callable;
 
 /**
  * 测试使用JDBC连接oracle数据库
  */
 public class JDBCDemo {
     public static void main(String[] args) {
+
         try {
             /**
              * 第一步
@@ -36,7 +38,9 @@ public class JDBCDemo {
                     "system",
                     "Jia60951327"
             );
+
             /**
+             *
              * 通过Connection创建Statement
              * 用来执行sql语句
              */
